@@ -77,23 +77,7 @@ public class PruebaSet {
 		for (Animal animal : animalesPorOrdenEspecie) {
 			System.out.println(animal + " HahsCode:" + animal.hashCode());
 		}
-		/*
-		 * A la hora de insertar objetos en un TreeSet, aunque equals == true y HashCode
-		 * tenga el mismo Hash, prevalecerÃ¡ el resultado de la funciÃ³n compareTo() (en
-		 * realidad en hash no se tiene en cuenta porque ahora no se usa, no es un
-		 * HashSet).
-		 */
-
 		
-
-		/*
-		 * Si queremos una coleccion de elementos no repetidos podemos usar un ArrayList
-		 * con una comprobacion con equals() antes de insertar. Si partimos ya de una
-		 * lista con elementos repetidos podemos transformarlo a LinkedHashSet para que
-		 * respete el orden y elimine los duplicados y pasar el resultado a la lista
-		 * nuevamente. Si ademÃ¡s queremos ordenarla por valores, usaremos TreeSet
-		 * (HashSet no es recomendable porque me devuelve la lista sin el mismo orden
-		 * que tenia)
 		 */
 		ArrayList<Float> decimalesRepetidos = new ArrayList<>();
 		decimalesRepetidos.add(134f);
