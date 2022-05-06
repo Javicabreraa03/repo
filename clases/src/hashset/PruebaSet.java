@@ -18,7 +18,7 @@ public class PruebaSet {
 		Animal a4 = new Animal("perro", 3);
 		Animal a5 = new Animal("perro", 3);
 
-		System.out.println("\nComparación de objetos:");
+		System.out.println("\nComparaciÃ³n de objetos:");
 		System.out.println("a1 es igual a a2:" + a1.equals(a2));
 		System.out.println("a1 es igual a a3:" + a1.equals(a3));
 		System.out.println("a2 es igual a a3:" + a2.equals(a3));
@@ -29,12 +29,12 @@ public class PruebaSet {
 		 * el set considera que dos objetos son iguales cuando se cumple a la vez que:
 		 * -El metodo equals devuelve true -El metodo hashCode devuelve el mismo entero
 		 */
-		System.out.println("\nValor de los códigos hash:");
-		System.out.println("Código hash de a1:" + a1.hashCode());
-		System.out.println("Código hash de a2:" + a2.hashCode());
-		System.out.println("Código hash de a3:" + a3.hashCode());
-		System.out.println("Código hash de a4:" + a4.hashCode());
-		System.out.println("Código hash de a5:" + a5.hashCode());
+		System.out.println("\nValor de los cÃ³digos hash:");
+		System.out.println("CÃ³digo hash de a1:" + a1.hashCode());
+		System.out.println("CÃ³digo hash de a2:" + a2.hashCode());
+		System.out.println("CÃ³digo hash de a3:" + a3.hashCode());
+		System.out.println("CÃ³digo hash de a4:" + a4.hashCode());
+		System.out.println("CÃ³digo hash de a5:" + a5.hashCode());
 
 		// Creamos un hashSet
 		HashSet<Animal> animales = new HashSet<>();
@@ -79,24 +79,19 @@ public class PruebaSet {
 		}
 		/*
 		 * A la hora de insertar objetos en un TreeSet, aunque equals == true y HashCode
-		 * tenga el mismo Hash, prevalecerá el resultado de la función compareTo() (en
+		 * tenga el mismo Hash, prevalecerÃ¡ el resultado de la funciÃ³n compareTo() (en
 		 * realidad en hash no se tiene en cuenta porque ahora no se usa, no es un
 		 * HashSet).
 		 */
 
-		/*
-		 * En realidad las variantes de Set se usan poco (lo mas normal, de manera
-		 * auxiliar para recorrer un HashMap con keySet y entrySet). En realidad,
-		 * tambien los Mapas del tipo que sean se usan poco (ya que normalmente hay un
-		 * �ndice consecutivo).
-		 */
+		
 
 		/*
 		 * Si queremos una coleccion de elementos no repetidos podemos usar un ArrayList
 		 * con una comprobacion con equals() antes de insertar. Si partimos ya de una
 		 * lista con elementos repetidos podemos transformarlo a LinkedHashSet para que
 		 * respete el orden y elimine los duplicados y pasar el resultado a la lista
-		 * nuevamente. Si además queremos ordenarla por valores, usaremos TreeSet
+		 * nuevamente. Si ademÃ¡s queremos ordenarla por valores, usaremos TreeSet
 		 * (HashSet no es recomendable porque me devuelve la lista sin el mismo orden
 		 * que tenia)
 		 */
@@ -128,9 +123,9 @@ public class PruebaSet {
 		decimalesRepetidos = new ArrayList<>(decimalesNoRepetidosOrdenadosPorInsercion);
 
 		/*
-		 * Ademas de Comparable, se puede usar tambi�n Comparator para tener varios
+		 * Ademas de Comparable, se puede usar también Comparator para tener varios
 		 * comparadores, por diferentes atributos, orden inverso... ya que Comparable
-		 * solo nos permite un tipo de comparaci�n dentro de la misma clase.
+		 * solo nos permite un tipo de comparación dentro de la misma clase.
 		 */
 		TreeSet<Animal> ordenadoPorCodigo = 
 				new TreeSet<>(new ComparadorDeAnimalesPorCodigo());
@@ -154,8 +149,8 @@ public class PruebaSet {
 		
 		/*Otra manera de usar un Comparator es crearlo directamente
 		 * en el constructor de la coleccion (en lugar de estar
-		 * declarado en otra clase) caso en que ser� an�nimo
-		 * y se usar� directamente el tipo de su padre (la interfaz)*/
+		 * declarado en otra clase) caso en que será anónimo
+		 * y se usará directamente el tipo de su padre (la interfaz)*/
 		TreeSet<Animal> ordenadoPorEspecieDesc = 
 				new TreeSet<Animal>( new Comparator<Animal>() {
 					@Override
@@ -171,9 +166,9 @@ public class PruebaSet {
 		System.out.println("\nContenido del TreeSet " + "(POR ORDEN DE ESPECIE DESCENDENTE):");
 		System.out.println(ordenadoPorEspecieDesc);
 		
-		/*En realidad el m�todo anterior es enrevesado, pero es un 
+		/*En realidad el método anterior es enrevesado, pero es un 
 		 * paso intermedio para llegar a usar una expresion lambda
-		 * al crear el Comparator, ahorrandonos mucho c�digo*/
+		 * al crear el Comparator, ahorrandonos mucho código*/
 		TreeSet<Animal> ordenadoPorEspecieDescLambda = 
 				new TreeSet<Animal>( 
 					// (parametros funcion) -> {cuerpo funcion}
@@ -196,8 +191,8 @@ public class PruebaSet {
 					con su metodo sort.
 				-Cuando queremos crear un TreeMap pasando 
 					el comparador a su constructor. 
-					Se podr�a usar para crear un TreeSet 
-					tambi�n, pero acabamos de ver que se 
+					Se podría usar para crear un TreeSet 
+					también, pero acabamos de ver que se 
 					puede usar en su lugar una lista y 
 					ordenarla con sort.					
 		 */
